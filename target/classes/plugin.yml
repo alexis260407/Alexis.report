@@ -1,0 +1,10 @@
+name: Alexisreport
+version: 1
+main: fr.alexis.report.Main
+commands:
+  report:
+  die:
+    usage: /command
+  setbutton:
+    description: Sets the location of the button
+    usage: /setbutton
