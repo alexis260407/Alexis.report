@@ -8,10 +8,9 @@ repositories {
     mavenCentral()
     maven {
 	    url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-	    content {
-	      includeGroup 'org.bukkit'
-	      includeGroup 'org.spigotmc'
-	    }
+    }
+    maven {
+    	url = 'https://oss.sonatype.org/content/groups/public/'
     }
 }
 
