@@ -31,12 +31,12 @@ public class ScoreBoard implements Listener {
 
 	public static void addLineToSb(Player p, Scoreboard board, Objective obj) {
 		Team myData = board.registerNewTeam("myData");
-		myData.setPrefix(ChatColor.RED + "Mon incroyable data ?");
+		myData.setPrefix(ChatColor.RED + "Test 1");
 		obj.getScore(ChatColor.BLUE + "").setScore(14);
 	}
 
 	public static void update(Player p) { // Permet d'actualiser le scoreboard
 		Scoreboard board = p.getScoreboard();
-		board.getTeam("myData").setPrefix(ChatColor.RED + "Mon incroyable data (2) ?");
+		board.getTeam("myData").setPrefix(ChatColor.RED + "Test 2");
 	}
 }

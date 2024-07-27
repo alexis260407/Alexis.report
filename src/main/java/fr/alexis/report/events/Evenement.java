@@ -15,12 +15,10 @@ public class Evenement implements Listener {
         Player player = event.getPlayer();
 
         // Envoyer un message de bienvenue au joueur
-        player.sendMessage(ChatColor.YELLOW + "Guten Morgen my friends "+  player.getName() + ". (Bienvenue mdrrr)");
+        player.sendMessage(ChatColor.YELLOW + "Guten Morgen my friends "+  player.getName());
 
         // Envoyer un message de bienvenue à tous les joueurs (null = rien)
         event.setJoinMessage(null);
-
-        ScoreBoard.update(player);
 
     }
     @EventHandler
