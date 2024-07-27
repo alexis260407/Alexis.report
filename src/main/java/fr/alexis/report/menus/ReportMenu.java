@@ -16,31 +16,22 @@ public class ReportMenu {
         //permet de créer un inventaire avec une variable et le nom du gui
         Inventory inventory = Bukkit.createInventory(null, 27, "Menu Report");
 
-        //variable de l'item se nomme targetHead mais le player_head marche pas ;-;
-        ItemStack targetHead = new ItemStack(Material.SKULL_ITEM, 1);
-        ItemMeta targetHeadMeta = targetHead.getItemMeta();
-        targetHeadMeta.setDisplayName(target.getName());
-        targetHead.setItemMeta(targetHeadMeta);
-
         //Slot de l'item demandé (mettre à la position 22)
-        inventory.setItem(15, targetHead);
+        inventory.setItem(15, create(Material.SKULL_ITEM, target.getName()));
 
-        ItemStack AntiJeu = new ItemStack(Material.IRON_SWORD, 1);
-        ItemMeta AntijeuMeta = AntiJeu.getItemMeta();
-        AntijeuMeta.setDisplayName("§cAnti-Jeu");
-        AntijeuMeta.setLore(Arrays.asList(ChatColor.WHITE + "sélectionner ce type de report"));
-        AntiJeu.setItemMeta(AntijeuMeta);
+        inventory.setItem(11, create(Material.IRON_SWORD, "§cAnti-Jeu", ChatColor.WHITE + "Sélectionner ce type de report"));
 
-        inventory.setItem(11, AntiJeu);
-
-        ItemStack langage = new ItemStack(Material.PAPER, 1);
-        ItemMeta langageMeta = langage.getItemMeta();
-        langageMeta.setDisplayName("§cLangage");
-        langageMeta.setLore(Arrays.asList(ChatColor.WHITE + "sélectionner ce type de report"));
-        langage.setItemMeta(langageMeta);
-
-        inventory.setItem(13, langage);
+        inventory.setItem(13, create(Material.PAPER, "§cLangage", ChatColor.WHITE + "Sélectionner ce type de report"));
 
         player.openInventory(inventory);
+    }
+    
+    public static ItemStack create(Material m, String display, String... lore) {
+        ItemStack langage = new ItemStack(m);
+        ItemMeta langageMeta = langage.getItemMeta();
+        langageMeta.setDisplayName(display);
+        langageMeta.setLore(Arrays.asList(lore));
+        langage.setItemMeta(langageMeta);
+        return langage;
     }
 }
