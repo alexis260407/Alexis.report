@@ -2,6 +2,7 @@ package fr.alexis.report.commands;
 
 import fr.alexis.report.Main;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
@@ -42,7 +43,13 @@ public class SetButtonCommand implements CommandExecutor {
                 targetBlock.getZ();
 
         FileConfiguration config = plugin.getConfig();
+        config.getString("button.location");
         config.set("button.location", buttonLocation);
+        config.getInt("button.location.x");
+
+        setInConfig(config, "button.location", targetBlock.getLocation());
+        setInConfig(config, "a.location", targetBlock.getLocation());
+        
         plugin.saveConfig();
 
         player.sendMessage(ChatColor.GREEN + "Button location set!");
@@ -54,5 +61,13 @@ public class SetButtonCommand implements CommandExecutor {
         Set<Material> transparent = new HashSet<>();
         transparent.add(Material.AIR);
         return player.getTargetBlock(transparent, range);
+    }
+    
+    public static void setInConfig(FileConfiguration config, String key, Location loc) {
+    	config.set(key + ".x", loc.getX());
+    	config.set(key + ".y", loc.getY());
+    	config.set(key + ".z", loc.getZ());
+    	
+    	config.getDouble(key + ".x");
     }
 }
