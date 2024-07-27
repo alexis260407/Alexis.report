@@ -20,7 +20,7 @@ public class Evenement implements Listener {
         // Envoyer un message de bienvenue à tous les joueurs (null = rien)
         event.setJoinMessage(null);
 
-        ScoreBoard.(player);
+        ScoreBoard.update(player);
 
     }
     @EventHandler
