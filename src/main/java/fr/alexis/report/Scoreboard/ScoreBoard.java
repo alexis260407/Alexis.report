@@ -11,7 +11,7 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
-
+//Elikill58 (merci) et moi
 public class ScoreBoard implements Listener {
 	@EventHandler
 	public void onPlayerJoinBoard(PlayerJoinEvent event) {
@@ -20,6 +20,7 @@ public class ScoreBoard implements Listener {
 	}
 
 	public static void createBoard(Player player) {
+		//permet de créer le Scoreboard
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
 		Scoreboard board = manager.getNewScoreboard();
@@ -32,7 +33,7 @@ public class ScoreBoard implements Listener {
 	public static void addLineToSb(Player p, Scoreboard board, Objective obj) {
 		Team myData = board.registerNewTeam("myData");
 		myData.setPrefix(ChatColor.RED + "Test 1");
-		obj.getScore(ChatColor.BLUE + "").setScore(14);
+		obj.getScore(ChatColor.BLUE + "").setScore(0);
 	}
 
 	public static void update(Player p) { // Permet d'actualiser le scoreboard
