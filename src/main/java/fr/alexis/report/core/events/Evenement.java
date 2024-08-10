@@ -1,6 +1,5 @@
-package fr.alexis.report.events;
+package fr.alexis.report.core.events;
 
-import fr.alexis.report.Scoreboard.ScoreBoard;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

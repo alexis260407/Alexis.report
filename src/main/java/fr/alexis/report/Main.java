@@ -1,14 +1,14 @@
 package fr.alexis.report;
 
-import fr.alexis.report.Scoreboard.ScoreBoard;
-import fr.alexis.report.commands.*;
-import fr.alexis.report.events.Evenement;
-import fr.alexis.report.listeners.ButtonListener;
-import fr.alexis.report.commands.SetButtonCommand;
+import fr.alexis.report.core.Scoreboard.ScoreBoard;
+import fr.alexis.report.core.commands.*;
+import fr.alexis.report.core.events.Evenement;
+import fr.alexis.report.core.listeners.ButtonListener;
+import fr.alexis.report.core.commands.SetButtonCommand;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import fr.alexis.report.listeners.MenuListener;
+import fr.alexis.report.core.listeners.MenuListener;
 
 public final class Main extends JavaPlugin {
 

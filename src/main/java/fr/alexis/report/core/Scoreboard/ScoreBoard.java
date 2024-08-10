@@ -1,4 +1,4 @@
-package fr.alexis.report.Scoreboard;
+package fr.alexis.report.core.Scoreboard;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,7 +24,7 @@ public class ScoreBoard implements Listener {
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
 		Scoreboard board = manager.getNewScoreboard();
-		Objective o = board.registerNewObjective("scores", "dummy");
+		Objective o = board.registerNewObjective("Test num 1", "dummy");
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
 		addLineToSb(player, board, o);
 		player.setScoreboard(board);
