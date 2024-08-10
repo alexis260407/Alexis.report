@@ -34,7 +34,7 @@ public class ScoreBoard implements Listener {
 		obj.getScore("§cServeur.fr").setScore(1);
 		obj.getScore("   ").setScore(2);
 		obj.getScore("En jeu" + ChatColor.RED).setScore(3);
-		obj.getScore("Joueurs" + ChatColor.RED + OnlinePlayer ).setScore(4);
+		obj.getScore("Joueurs" + ChatColor.RED).setScore(4);
 		obj.getScore("AFK").setScore(5);
 		obj.getScore("  ").setScore(6);
 		obj.getScore("➜ Pièce :").setScore(7);
@@ -54,7 +54,7 @@ public class ScoreBoard implements Listener {
 		if (Bukkit.getOnlinePlayers().size() == 0) {
 			onlineCounter.setPrefix(ChatColor.RED + "0");
 		} else {
-			onlineCounter.setPrefix("" + ChatColor.RED + Bukkit.getOnlinePlayers().size();
+			onlineCounter.setPrefix("" + ChatColor.DARK_RED + Bukkit.getOnlinePlayers().size() + ChatColor.RED + "/" + ChatColor.DARK_RED + Bukkit.getMaxPlayers());
 		}
 	}
 }
