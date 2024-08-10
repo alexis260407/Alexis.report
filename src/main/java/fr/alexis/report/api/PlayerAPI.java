@@ -7,7 +7,7 @@ public class PlayerAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
-    INSTANCE = this;
+    INSTANCE = thi;
     }
 
     @Override

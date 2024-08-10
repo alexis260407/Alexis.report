@@ -9,7 +9,7 @@ import org.bukkit.scoreboard.Team;
 public class PlayerListener {
     public void Online (PlayerJoinEvent p){
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
-        Team onlineCounter = board.registerNewTeam("onlineCounter");
+        Team onlineCounter = board.registerNewTeam("onlineCounte");
         // Note: The ' + "" + ' is there to convert the colors into strings without manually calling ChatColor#toString
         onlineCounter.addEntry(ChatColor.BLACK + "" + ChatColor.WHITE);
     }
