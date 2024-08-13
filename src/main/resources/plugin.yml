@@ -1,5 +1,5 @@
 name: Alexisreport
-version: 1
+version: 0.3
 main: fr.alexis.report.Main
 commands:
   report:
