@@ -32,6 +32,8 @@ public final class Main extends JavaPlugin {
         //getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         pm.registerEvents(new Evenement(), this);
         pm.registerEvents(new ScoreBoard(), this);
+        //Oldreport
+        getCommand("oldreport").setExecutor(new olreportcommand());
 
         getLogger().info("Plugin Allumé");
     }

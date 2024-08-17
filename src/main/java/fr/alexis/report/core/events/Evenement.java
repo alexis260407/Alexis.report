@@ -28,9 +28,9 @@ public class Evenement implements Listener {
         event.setQuitMessage(ChatColor.YELLOW + player.getName()+" a quitté la partie");
     }
 
-    @EventHandler
+ /*   @EventHandler
     public void onPlayerKick(PlayerKickEvent event){
         //rajouter le fait d'ajouter un message de kick pour everyone.
 
-    }
+    } */
 }
