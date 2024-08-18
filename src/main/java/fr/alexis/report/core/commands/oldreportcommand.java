@@ -9,9 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import fr.alexis.report.api.gui.ItemBuilder;
-
-public class olreportcommand implements CommandExecutor{
+public class oldreportcommand implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

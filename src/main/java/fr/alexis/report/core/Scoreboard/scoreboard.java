@@ -7,10 +7,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scoreboard.*;
-import fr.alexis.report.api.database.PlayerListener;
 
 //Elikill58 (merci) et moi
-public class ScoreBoard implements Listener {
+public class scoreboard implements Listener {
+	int online; //créer un online beau
+
 	@EventHandler
 	public void onPlayerJoinBoard(PlayerJoinEvent event) {
 		// permet de créer un scoreboard en event pour le player.
@@ -53,6 +54,5 @@ public class ScoreBoard implements Listener {
 	public static void update(Player p) { // Permet d'actualiser le scoreboard (actuellement pas encore utilisé)
 		Scoreboard board = p.getScoreboard();
 		board.getTeam("myData").setPrefix(ChatColor.RED + "Test 2");
-		
 	}
 }

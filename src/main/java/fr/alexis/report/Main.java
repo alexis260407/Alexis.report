@@ -1,6 +1,7 @@
 package fr.alexis.report;
 
-import fr.alexis.report.core.Scoreboard.ScoreBoard;
+import fr.alexis.report.bungee.MainBungee;
+import fr.alexis.report.core.Scoreboard.scoreboard;
 import fr.alexis.report.core.commands.*;
 import fr.alexis.report.core.events.Evenement;
 import fr.alexis.report.core.listeners.ButtonListener;
@@ -20,7 +21,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
     	instance = this;
-    	
+
     	PluginManager pm = getServer().getPluginManager();
         //Report Command + Listener
     	pm.registerEvents(new MenuListener(), this);
@@ -31,9 +32,13 @@ public final class Main extends JavaPlugin {
         //PlayerListener
         //getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         pm.registerEvents(new Evenement(), this);
-        pm.registerEvents(new ScoreBoard(), this);
+        pm.registerEvents(new scoreboard(), this);
         //Oldreport
-        getCommand("oldreport").setExecutor(new olreportcommand());
+        getCommand("oldreport").setExecutor(new oldreportcommand());
+        //bungee
+
+
+        MainBungee.getInstance().onEnable();
 
         getLogger().info("Plugin Allumé");
     }

@@ -1,5 +1,5 @@
 name: Alexisreport
-version: 0.3
+version: 0.3.1
 main: fr.alexis.report.Main
 commands:
   report:
@@ -10,3 +10,5 @@ commands:
     usage: /setbutton
   oldreport:
     description: test
+  help:
+    description: une commande help je vois pas d'autres choix ;-; ?

@@ -10,7 +10,8 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class Evenement implements Listener {
     @EventHandler
-    public void join(PlayerJoinEvent event) {        // Récupérer le joueur qui a rejoint
+    public void join(PlayerJoinEvent event) {
+        // Récupérer le joueur qui a rejoint
         Player player = event.getPlayer();
 
         // Envoyer un message de bienvenue au joueur
