@@ -42,7 +42,7 @@ public class scoreboard implements Listener {
 		obj.getScore("§cServeur.fr").setScore(1);
 		obj.getScore("   ").setScore(2);
 		obj.getScore("En jeu" + ChatColor.RED).setScore(3);
-		obj.getScore("t").setScore(4);
+		obj.getScore("Joueur " + ChatColor.GREEN + Bukkit.getOnlinePlayers().size() + "§7/§f" + Bukkit.getMaxPlayers() ).setScore(4);
 		obj.getScore("AFK").setScore(5);
 		obj.getScore("  ").setScore(6);
 		obj.getScore("➜ Pièce :").setScore(7);

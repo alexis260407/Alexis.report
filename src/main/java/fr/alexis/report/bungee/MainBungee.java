@@ -1,6 +1,7 @@
 package fr.alexis.report.bungee;
 
 import fr.alexis.report.Main;
+import fr.alexis.report.bungee.commands.flycommand;
 import fr.alexis.report.bungee.commands.helpcommand;
 
 import org.bukkit.plugin.PluginBase;
@@ -24,6 +25,7 @@ public class MainBungee {
   public void onEnable() {
         PluginManager pm = getServer().getPluginManager();
         Main.getInstance().getCommand("help").setExecutor(new helpcommand());
+      Main.getInstance().getCommand("fly").setExecutor(new flycommand());
 
         getLogger().info("Plugin bungee ON");
     }

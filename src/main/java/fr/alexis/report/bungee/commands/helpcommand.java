@@ -8,6 +8,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.scheduler.BukkitScheduler;
+
+import static org.bukkit.Bukkit.getServer;
 
 //Alexis et ChatGPT
 public class helpcommand implements CommandExecutor {
@@ -25,9 +29,9 @@ public class helpcommand implements CommandExecutor {
         } else if (args[0].equalsIgnoreCase("2")) {
             sendHelpPage2(player);
         }
-         else if (args[0].equalsIgnoreCase("3")) {
-            sendHelpPage3(player);
-        }
+       /*  else if (args[0].equalsIgnoreCase("3")) {
+            //sendHelpPage3(player);
+        }*/
         else {
             player.sendMessage("§cA ce que je vois, tu sais pas écrire /help...");
             player.sendMessage("§cSi tu as envie, je peux t'aider ;-;'");
@@ -50,7 +54,7 @@ public class helpcommand implements CommandExecutor {
         player.sendMessage("");
         player.sendMessage("§c§lLes personnes qui m'ont aidé:");
         player.sendMessage("");
-        player.sendMessage("§bElikill58 : §fCoté code ");
+        player.sendMessage("§bElikill58 : §fCoté code optimisation");
         player.sendMessage("§bKhorosenai & Zatrax_ : §fMon aidé a ajouter");
         player.sendMessage("le spigot de minecraft en tant artifacts");
         player.sendMessage("");
@@ -63,8 +67,13 @@ public class helpcommand implements CommandExecutor {
         // Envoie le message cliquable au joueur
         player.spigot().sendMessage(message);
     }
-        private void sendHelpPage3(Player player) {
-            player.sendMessage("Message a dev");
+        /* private void sendHelpPage3(Player player) {
+            BukkitScheduler scheduler = getServer().getScheduler();
 
+            // Commande non fonctionnel
+            scheduler.scheduleSyncDelayedTask((Plugin) this, () -> player.sendMessage("God dammit "), 20L); // 20L ticks = 1 seconde
+            scheduler.scheduleSyncDelayedTask((Plugin) this, () -> player.sendMessage("QUESQUE C'EST "), 4* 20L); // // 4* = seconde = quand on est à la 4ème seconde.
+            player.sendMessage("Message a dev");
     }
+    */
 }

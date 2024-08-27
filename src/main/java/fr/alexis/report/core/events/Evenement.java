@@ -1,12 +1,14 @@
 package fr.alexis.report.core.events;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Evenement implements Listener {
     @EventHandler
@@ -19,6 +21,8 @@ public class Evenement implements Listener {
 
         // Envoyer un message de bienvenue à tous les joueurs (null = rien)
         event.setJoinMessage(null);
+
+        player.getInventory().setItem(0, new ItemStack(Material.COMPASS));
 
     }
     @EventHandler

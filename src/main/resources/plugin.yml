@@ -12,3 +12,5 @@ commands:
     description: test
   help:
     description: une commande help je vois pas d'autres choix ;-; ?
+  fly:
+    description: i believe i can fly
