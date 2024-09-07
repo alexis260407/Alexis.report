@@ -1,5 +1,5 @@
 name: Alexisreport
-version: 0.3.1
+version: 0.3.4
 main: fr.alexis.report.Main
 commands:
   report:
@@ -14,3 +14,5 @@ commands:
     description: une commande help je vois pas d'autres choix ;-; ?
   fly:
     description: i believe i can fly
+  inutile:
+      description: Une commande vraiment ?

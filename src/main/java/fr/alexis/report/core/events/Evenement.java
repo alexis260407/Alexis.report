@@ -1,6 +1,6 @@
 package fr.alexis.report.core.events;
 
-import org.bukkit.ChatColor;
+import fr.alexis.report.api.gui.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,34 +8,38 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class Evenement implements Listener {
+
     @EventHandler
     public void join(PlayerJoinEvent event) {
         // Récupérer le joueur qui a rejoint
         Player player = event.getPlayer();
+        event.getHandlers();
 
         // Envoyer un message de bienvenue au joueur
-        player.sendMessage(ChatColor.YELLOW + "Guten Morgen my friends "+  player.getName());
+        event.setJoinMessage("§eGuten Morgen my friends "+  player.getName());
 
-        // Envoyer un message de bienvenue à tous les joueurs (null = rien)
-        event.setJoinMessage(null);
-
-        player.getInventory().setItem(0, new ItemStack(Material.COMPASS));
-
+        player.getInventory().setItem(0, new ItemBuilder(Material.COMPASS).setName("§cNavigation").toItemStack());
+        player.getInventory().setItem(1, new ItemBuilder(Material.SKULL_ITEM).setName("§2Profil").toItemStack());
+        player.getInventory().setItem(2, new ItemBuilder(Material.CHEST).setName("§aCosmétiques").toItemStack());
+        player.getInventory().setItem(4, new ItemBuilder(Material.FEATHER).setName("§eSpam Jump").toItemStack());
+        player.getInventory().setItem(8, new ItemBuilder(Material.REDSTONE_COMPARATOR).setName("§cParamètre").toItemStack());
     }
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event){
         Player player = event.getPlayer();
         player.sendMessage("Test "+ player.getName());
 
-        event.setQuitMessage(ChatColor.YELLOW + player.getName()+" a quitté la partie");
+        event.setQuitMessage(player.getName()+"§e a quitté la partie");
     }
 
- /*   @EventHandler
+    @EventHandler
     public void onPlayerKick(PlayerKickEvent event){
-        //rajouter le fait d'ajouter un message de kick pour everyone.
+        Player player = event.getPlayer();
+        player.sendMessage("Le joueur "+ player.getName() + " a été kick");
 
-    } */
+        event.setReason(player.getName() +"§e vous avez été kick pour raison :");
+
+    }
 }

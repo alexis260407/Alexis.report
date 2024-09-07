@@ -1,4 +1,4 @@
-package fr.alexis.report.core.commands;
+package fr.alexis.report.core.commands.base;
 
 import fr.alexis.report.Main;
 import org.bukkit.ChatColor;

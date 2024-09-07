@@ -1,4 +1,4 @@
-package fr.alexis.report.bungee.commands;
+package fr.alexis.report.bungee.commands.base;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;

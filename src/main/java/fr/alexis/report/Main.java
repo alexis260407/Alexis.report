@@ -2,10 +2,11 @@ package fr.alexis.report;
 
 import fr.alexis.report.bungee.MainBungee;
 import fr.alexis.report.core.Scoreboard.scoreboard;
-import fr.alexis.report.core.commands.*;
+import fr.alexis.report.core.commands.base.Reportcommand;
+import fr.alexis.report.core.commands.base.oldreportcommand;
 import fr.alexis.report.core.events.Evenement;
 import fr.alexis.report.core.listeners.ButtonListener;
-import fr.alexis.report.core.commands.SetButtonCommand;
+import fr.alexis.report.core.commands.base.SetButtonCommand;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
