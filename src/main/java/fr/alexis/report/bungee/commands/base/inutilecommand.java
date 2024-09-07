@@ -7,9 +7,11 @@ import org.bukkit.entity.Player;
 
 import java.util.Random;
 
-//on est bien d'accord que ce code est absolument
-//dégeu non ?
-//signé par Alexis (oui je me clash à moi-même)
+/**
+ * on est bien d'accord que ce code est absolument
+ * dégeu non ?
+ * signé par Alexis (oui je me clash à moi-même)
+ */
 public class inutilecommand implements CommandExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
@@ -24,7 +26,7 @@ public class inutilecommand implements CommandExecutor{
             sendHelpPage(player);
         }
        else if (args[0].equalsIgnoreCase("3")) {
-            sendHelpPage3(player);
+            player.sendMessage("hello");
         }
         else if (args[0].equalsIgnoreCase("")) {
             //sendHelpPage3(player);
