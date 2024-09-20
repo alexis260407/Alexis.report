@@ -21,20 +21,29 @@ public class inutilecommand implements CommandExecutor{
         }
         Player player = ((Player) sender).getPlayer();
         if (args.length == 0 || args[0].equalsIgnoreCase("help")) {
-            Heal(player);
-        } else if (args[0].equalsIgnoreCase("heal")) {
             sendHelpPage(player);
+        }else{
+            return true;
         }
-       else if (args[0].equalsIgnoreCase("3")) {
+        if (args[0].equalsIgnoreCase("heal")) {
+            Heal(player);
+        }
+        else{
+            return true;
+        }
+
+        if (args[0].equalsIgnoreCase("3")) {
             player.sendMessage("hello");
+        }else{
+            return true;
         }
-        else if (args[0].equalsIgnoreCase("")) {
+        if (args[0].equalsIgnoreCase("t")) {
+            player.sendMessage("hello");
             //sendHelpPage3(player);
         }
         else {
-            player.sendMessage("§cA ce que je vois, tu sais pas écrire /help...");
-            player.sendMessage("§cSi tu as envie, je peux t'aider ;-;'");
-
+            player.sendMessage("§ca faire le msg");
+            return true;
         }
 
         return true;

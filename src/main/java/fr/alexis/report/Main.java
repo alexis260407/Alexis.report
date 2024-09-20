@@ -2,11 +2,9 @@ package fr.alexis.report;
 
 import fr.alexis.report.bungee.MainBungee;
 import fr.alexis.report.core.Scoreboard.scoreboard;
-import fr.alexis.report.core.commands.base.Reportcommand;
-import fr.alexis.report.core.commands.base.oldreportcommand;
+import fr.alexis.report.core.commands.base.*;
 import fr.alexis.report.core.events.Evenement;
 import fr.alexis.report.core.listeners.ButtonListener;
-import fr.alexis.report.core.commands.base.SetButtonCommand;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,6 +24,7 @@ public final class Main extends JavaPlugin {
     	PluginManager pm = getServer().getPluginManager();
         //Report Command + Listener
     	pm.registerEvents(new MenuListener(), this);
+        getCommand("test").setExecutor(new PlayerCommand());
         getCommand("report").setExecutor(new Reportcommand());
         //Bouton Command + Listener
         pm.registerEvents(new ButtonListener(this), this);
@@ -34,9 +33,9 @@ public final class Main extends JavaPlugin {
         //getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         pm.registerEvents(new Evenement(), this);
         pm.registerEvents(new scoreboard(), this);
+        getCommand("invsee").setExecutor(new invseecommand());
         //Oldreport
         getCommand("oldreport").setExecutor(new oldreportcommand());
-        //bungee
 
 
         MainBungee.getInstance().onEnable();

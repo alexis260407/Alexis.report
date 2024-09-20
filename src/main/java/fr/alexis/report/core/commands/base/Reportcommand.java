@@ -7,12 +7,16 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import fr.alexis.report.core.menus.ReportMenu;
+
+import static fr.alexis.report.api.database.PlayerListener.hasPlayerJoinedBefore;
+
 //Moi même
 public class Reportcommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         Player player = (Player) sender;
+        //Inutilisé String playerName = args[0];
 
         if(args.length != 1){
             //Montre
@@ -25,13 +29,15 @@ public class Reportcommand implements CommandExecutor {
         Player target = Bukkit.getPlayer(args[0]);
 
         if(target == null){
-            //si le joueurs est hors ligne, alors = null (défault de minecraft)
-            player.sendMessage(ChatColor.RED + "Joueurs pas en ligne.");
+            //si le joueur est hors ligne, alors = null (défault de minecraft)
+            player.sendMessage(ChatColor.RED + "Joueurs n'est pas connecté.");
+        }else {
+            player.sendMessage(ChatColor.RED + "N'existe pas.");
             return true;
         }
 
         if (target == player){
-            //si le joueurs veut se report lui même :
+            //si le joueur veut ce report à lui-même :
             player.sendMessage(ChatColor.RED + "Tu cherches de l'attention c: ? (inspiré skylymc)");
             return false;
         }
