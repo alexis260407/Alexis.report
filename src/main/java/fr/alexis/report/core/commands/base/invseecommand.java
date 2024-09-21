@@ -1,6 +1,7 @@
 package fr.alexis.report.core.commands.base;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,16 +13,21 @@ public class invseecommand implements CommandExecutor {
 
             Player player = (Player) sender;
 
-            if (args.length == 1){
-                Player target2 = Bukkit.getPlayer(args[0]);
-                if (target2.isOnline()){
-                    player.openInventory(target2.getInventory());
-                } else if(!(target2.isOnline())){
-                    player.sendMessage("§cCe joueur n'est pas en ligne.(j'ai pas encore appris la db :/)");
-                }
-                } else {
-                    player.sendMessage("§c/invsee <Player>");
-                }
-            return false;
-        }
+            if(args.length != 1){
+                //Montre
+                player.sendMessage(ChatColor.RED + "/report <Player>");
+                return true;
+            }
+            Player target = Bukkit.getPlayer(args[0]);
+
+            if(player == null){
+                //si le joueur est hors ligne, alors = null (défault de minecraft)
+                player.sendMessage(ChatColor.RED + "Le Joueur n'est pas connecté.");
+                return false;
+            }
+
+            player.openInventory(target.getInventory());
+            return true;
+
+    }
 }

@@ -20,7 +20,7 @@ public class Reportcommand implements CommandExecutor {
 
         if(args.length != 1){
             //Montre
-            player.sendMessage(ChatColor.RED + "/report <Player>");
+            player.sendMessage(ChatColor.RED + "/invsee <Player>");
             return true;
         }
 
@@ -30,10 +30,8 @@ public class Reportcommand implements CommandExecutor {
 
         if(target == null){
             //si le joueur est hors ligne, alors = null (défault de minecraft)
-            player.sendMessage(ChatColor.RED + "Joueurs n'est pas connecté.");
-        }else {
-            player.sendMessage(ChatColor.RED + "N'existe pas.");
-            return true;
+            player.sendMessage(ChatColor.RED + "Le Joueur n'est pas connecté.");
+            return false;
         }
 
         if (target == player){
