@@ -15,8 +15,10 @@ commands:
   fly:
     description: i believe i can fly
   inutile:
-      description: Une commande vraiment ?
+      description: Une commande vraiment ? (inutiiiile !)
   test:
-        description: Une commande vraiment ?
+        description: Une commande vraiment ? (rien du tout enft)
   invsee:
-    description: Une commande vraiment ?
+    description: Une commande vraiment ? (utiiiile !)
+  msg:
+    description: Une commande msg ?

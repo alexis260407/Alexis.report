@@ -7,8 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import fr.alexis.report.core.menus.ReportMenu;
-
-import static fr.alexis.report.api.database.PlayerListener.hasPlayerJoinedBefore;
+import org.bukkit.plugin.java.JavaPlugin;
 
 //Moi même
 public class Reportcommand implements CommandExecutor {
@@ -20,7 +19,7 @@ public class Reportcommand implements CommandExecutor {
 
         if(args.length != 1){
             //Montre
-            player.sendMessage(ChatColor.RED + "/invsee <Player>");
+            player.sendMessage(ChatColor.RED + "/report <Player>");
             return true;
         }
 

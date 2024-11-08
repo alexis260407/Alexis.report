@@ -15,7 +15,7 @@ public class invseecommand implements CommandExecutor {
 
             if(args.length != 1){
                 //Montre
-                player.sendMessage(ChatColor.RED + "/report <Player>");
+                player.sendMessage(ChatColor.RED + "/invsee <Player>");
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);

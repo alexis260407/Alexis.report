@@ -1,5 +1,6 @@
 package fr.alexis.report.core.Scoreboard;
 
+import fr.alexis.report.api.utils.DateUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -7,6 +8,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scoreboard.*;
+
+import java.util.Date;
 
 //Elikill58 (merci) et moi
 
@@ -42,7 +45,7 @@ public class scoreboard implements Listener {
 		obj.getScore("➜ Pièce :").setScore(7);
 		obj.getScore("➜ Grade").setScore(8);
 		obj.getScore("➜ Pseudo:").setScore(9);
-		obj.getScore("§c").setScore(10);
+		obj.getScore("§c " + (new Date()).getTime()).setScore(10); //Pas définit en dd/mm/yyyy (ou hh:mm/dd)
 	}
 
 	public static void update(Player p) { // Permet d'actualiser le scoreboard (actuellement pas encore utilisé)

@@ -4,7 +4,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import static fr.alexis.report.api.database.PlayerListener.hasPlayerJoinedBefore;
+import static fr.alexis.report.api.player.PlayerListener.hasPlayerJoinedBefore;
+
+//Chatgpt
 
 public class PlayerCommand implements CommandExecutor{
     @Override
